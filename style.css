@@ -1,3 +1,10 @@
+body {
+  height: 999px;
+}
+.navbar {
+  position: relative;
+  z-index: 1;
+}
 /* navbar */
 .navbar-brand {
   font-family: "viga";
@@ -8,7 +15,25 @@
 .jumbotron {
   background-image: url(img/jumbotron-bg.jpg);
   background-size: cover;
-  height: 600px;
+  background-position: top;
+  height: 550px;
+  text-align: center;
+  position: relative;
+}
+
+.jumbotron::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: absolute;
+  bottom: 0;
+}
+
+.jumbotron .container {
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
@@ -16,6 +41,8 @@ h1 {
   text-align: center;
   color: white;
   font-weight: 200;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
 }
 
 .container h1 span {
@@ -51,10 +78,13 @@ h1 {
     margin: auto;
     padding-bottom: 5px;
     margin-bottom: -8px;
+    position: relative;
+    z-index: 2;
   }
 
   .jumbotron {
     margin-top: -78px;
+    height: 640px;
   }
 
   h1 {
